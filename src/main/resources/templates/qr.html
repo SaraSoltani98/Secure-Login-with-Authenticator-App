@@ -1,10 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>QR-kod</title>
 </head>
 <body>
-$END$
+
+<h1>Skanna QR-koden</h1>
+
+<p>
+    Skanna QR-koden med Microsoft Authenticator
+    eller Google Authenticator.
+</p>
+
+<img th:src="'data:image/png;base64,' + ${qrCodeImage}"
+     alt="QR Code">
+
+<br><br>
+
+<p>
+    Konto: <span th:text="${email}"></span>
+</p>
+
+<br>
+
+<a href="/login">Fortsätt till inloggning</a>
+
 </body>
 </html>

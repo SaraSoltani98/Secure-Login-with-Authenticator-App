@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Register</title>
 </head>
 <body>
-$END$
+
+<h1>Register</h1>
+
+<form th:action="@{/register}" th:object="${user}" method="post">
+
+    <label>Email:</label><br>
+    <input type="email" th:field="*{email}" required>
+    <br><br>
+
+    <label>Password:</label><br>
+    <input type="password" th:field="*{password}" required>
+    <br><br>
+
+    <label>
+        <input type="checkbox" th:field="*{twoFactorEnabled}">
+        Använd autentiseringsapp
+    </label>
+
+    <button type="submit">Register</button>
+
+</form>
+
+<br>
+<a href="/">Back to home</a>
+
 </body>
 </html>

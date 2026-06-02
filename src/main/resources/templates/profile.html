@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Profil</title>
 </head>
 <body>
-$END$
+
+<h1>Du är inloggad</h1>
+
+<p>Välkommen till din profilsida.</p>
+
+<form th:action="@{/logout}" method="post">
+    <button type="submit">Logga ut</button>
+</form>
+
 </body>
 </html>

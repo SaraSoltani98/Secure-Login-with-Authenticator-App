@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Verifiera kod</title>
 </head>
 <body>
-$END$
+
+<h1>Verifiera inloggning</h1>
+
+<p>Skriv in koden från din autentiseringsapp.</p>
+
+<form th:action="@{/verify-code}" method="post">
+    <label>Kod:</label><br>
+    <input type="number" name="code" required>
+    <br><br>
+
+    <button type="submit">Verifiera</button>
+</form>
+
+<p th:if="${error}" th:text="${error}" style="color:red;"></p>
+
 </body>
 </html>
